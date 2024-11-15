@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduling Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Scheduling Algorithms</h1>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <label for="arrivalTime">Arrival Times (space-separated):</label>
+            <input type="text" id="arrivalTime" placeholder="e.g. 0 2 4">
+
+            <label for="burstTime">Burst Times (space-separated):</label>
+            <input type="text" id="burstTime" placeholder="e.g. 4 5 3">
+
+            <label for="timeQuantum">Time Quantum (for Round Robin):</label>
+            <input type="number" id="timeQuantum" placeholder="e.g. 2">
+
+            <label for="priorities">Priorities (space-separated):</label>
+            <input type="text" id="priorities" placeholder="e.g. 2 1 3">
+
+            <label for="algorithm">Choose Algorithm:</label>
+            <select id="algorithm">
+                <option value="FCFS">First-Come-First-Served (FCFS)</option>
+                <option value="roundRobin">Round Robin</option>
+                <option value="SJF">Shortest Job First (SJF)</option>
+                <option value="SRJF">Shortest Remaining Job First (SRJF)</option>
+                <option value="PriorityScheduling">Priority Scheduling</option>
+            </select>
+
+            <button id="runButton">Run Scheduling</button>
+        </div>
+
+        <!-- Gantt Chart -->
+        <div id="ganttChart" class="gantt-container"></div>
+
+        <!-- Results Table -->
+        <div id="resultTable" class="hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                        <th>Completion Time</th>
+                        <th>Waiting Time</th>
+                        <th>Turnaround Time</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+            <div id="averages" class="averages">
+                <p><strong>Average Waiting Time:</strong> <span id="avgWaitingTime"></span></p>
+                <p><strong>Average Turnaround Time:</strong> <span id="avgTurnaroundTime"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script type="module" src="fcfs.js"></script>
+    <script type="module" src="roundRobin.js"></script>
+    <script type="module" src="sjf.js"></script>
+    <script type="module" src="srjf.js"></script>
+    <script type="module" src="priority.js"></script>
+</body>
+</html>
