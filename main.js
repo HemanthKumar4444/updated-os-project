@@ -49,13 +49,21 @@ document.getElementById('runButton').addEventListener('click', () => {
 function displayGanttChart(ganttChart) {
     const ganttContainer = document.getElementById('ganttChart');
     ganttContainer.innerHTML = ''; // Clear previous chart
+
+    // Create a container for the horizontal Gantt chart
+    const chartRow = document.createElement('div');
+    chartRow.className = 'gantt-row';
+
     ganttChart.forEach(pid => {
         const bar = document.createElement('div');
         bar.className = 'gantt-bar';
+        bar.style.width = '100px'; // Adjust based on the timeslice or duration
         bar.style.backgroundColor = getRandomColor();
-        bar.innerText = `P${pid}`;
-        ganttContainer.appendChild(bar);
+        bar.textContent = `P${pid}`;
+        chartRow.appendChild(bar);
     });
+
+    ganttContainer.appendChild(chartRow);
 }
 
 function displayResultTable(processes) {

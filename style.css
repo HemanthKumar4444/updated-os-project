@@ -1,101 +1,133 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family:'Times New Roman', Times, serif;
+  background: rgba(228, 231, 228, 0.468);
+  background: linear-gradient(90deg, rgba(228, 231, 228, 0.533) 0%, hsla(228, 75%, 16%, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(228, 231, 228, 0.614) 0%, hsla(228, 75%, 16%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(228, 231, 228, 0.388) 0%, hsla(228, 75%, 16%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#E4E7E4", endColorstr="#0A1647", GradientType=1);
+  color: #e4e5e7; 
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f7f6;
 }
 
+/* Heading Styles */
+h1, h2, h3 {
+  text-align: center;
+  color: #eac927; 
+  margin: 20px;
+}
+
+/* Container Styling */
 .container {
-  width: 80%;
-  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
   padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
-  text-align: center;
-}
-
-.input-section {
-  margin-bottom: 20px;
-}
-
-input, select, button {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  font-size: 1.2rem;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-.gantt-container {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.gantt-chart {
+/* Gantt Chart Container */
+#ganttChart {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 10px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  overflow-x: auto;
 }
 
+/* Gantt Bar */
 .gantt-bar {
-  margin-right: 2px;
-  height: 30px;
-  color: white;
-  text-align: center;
-  font-size: 12px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 4px;
-}
-
-.hidden {
-  display: none;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
+  display: inline-block;
+  min-width: 60px; 
+  margin-right: 5px;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-.averages {
-  margin-top: 20px;
-  font-size: 1.1rem;
+  background-color: #FFD700; 
+  color: #0A1647; 
+  border-radius: 5px;
   font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Table Styling */
+#resultTable {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 5px;
+  overflow: hidden;
+  color: #e4e5e7; 
+}
+
+#resultTable th, #resultTable td {
+  border: 1px solid #444;
+  padding: 10px;
   text-align: center;
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#resultTable th {
+  background-color: #FFD700; 
+  color: #0A1647; 
+}
+
+#resultTable td {
+  color: #0A1647;
+  font-weight: 600;
+}
+
+/* Button Styling */
+button {
+  background-color: #FFD700; 
+  color: #0A1647; 
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FFC300; 
+}
+
+/* Input and Select Styling */
+input, select {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: calc(100% - 24px);
+  background-color: rgba(255, 255, 255, 0); 
+  color: #000000; 
+}
+
+input::placeholder {
+  color: #03000b; 
+}
+
+select,option{
+  font-weight: 600;
+}
+
+.averages{
+  color: #0A1647;
+  font-weight: 600;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .container {
+      width: 95%;
+  }
 }
